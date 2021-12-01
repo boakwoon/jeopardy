@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizGame</title>
+<body>
+
+<div class="app">
+   
+    <header class="top-header">
+       <h1>Quiz Game</h1>
+       <p class="total">Total <span class="total-count"></span></p>
+    </header>
+    
+     <div class="panel">
+     </div>
+    
+     <div class="card-modal">
+        <div class=card-modal-inner>
+           <h2 class="clue-text"></h2>
+           <form autocomplete="off">
+              <input name="user-answer" type="text" />
+              <button type="submit">Answer</button>
+           </form>
+           <div class="result">
+              <p class="result_success">CORRECT</p>
+              <p class="result_fail">INCORRECT</p>
+              <p class="result_correct-answer">
+                 The correct answer is <span class="result_correct-answer-text"></span>
+              </p>
+           </div>
+        </div>
+     </div>
+ </div>
+ <script src="/script.js"></script>
+</body>
+</head>
+</html>
