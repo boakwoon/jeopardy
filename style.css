@@ -33,16 +33,6 @@
     align-items: center;
     text-shadow: var(--text-shadow);
  }
- .total {
-    display: flex;
-    align-items: center;
- }
- .total-count {
-    color: var(--yellow);
-    font-size: 2em;
-    font-weight:bold;
-    margin-left: 0.2em;
- }
  
  .column ul {
     list-style-type: none;
