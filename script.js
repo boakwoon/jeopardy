@@ -3,17 +3,15 @@ class QuizGame {
        
        this.useCategoryIds = options.useCategoryIds || [ 221, 1072, 3514, 218]; 
        /*
-          Default Categories from public API Jservise https://jservice.io/search
+          Categories from public API https://jservice.io/search
        */      
 
        this.categories = [];
        this.clues = {};
 
        this.currentClue = null;
-       this.total = 0;
 
        this.panelElement = element.querySelector(".panel");
-       this.totalCountElement = element.querySelector(".total-count");
        this.formElement = element.querySelector("form");
        this.inputElement = element.querySelector("input[name=user-answer]");
        this.modalElement = element.querySelector(".card-modal");
@@ -34,8 +32,6 @@ class QuizGame {
        this.formElement.addEventListener("submit", event => {
           this.handleFormSubmit(event);
        });
-
-       this.updateTotal(0);
        
        this.fetchCategories();
     }
@@ -99,11 +95,7 @@ class QuizGame {
 
        this.panelElement.appendChild(column);
     }
- 
-    updateTotal(change) {
-       this.total += change;
-       this.totalCountElement.textContent = this.total;
-    }
+
  
     handleClueClick(event) {
        var clue = this.clues[event.target.dataset.clueId];
@@ -127,9 +119,6 @@ class QuizGame {
        event.preventDefault();
        
        var isCorrect = this.cleanseAnswer(this.inputElement.value) === this.cleanseAnswer(this.currentClue.answer);
-       if (isCorrect) {
-          this.updateTotal(this.currentClue.value);
-       }
        
        this.revealAnswer(isCorrect);
     }
